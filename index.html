@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Aniversário</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="card-inside">
+        <h1>Feliz Aniversário</h1>
+        <p>Pai, nesse dia tão especial, eu quero lhe desejar tudo de melhor no mundo. Quero desejar muitos anos de vida e prosperidade, ao lado de pessoas que ama. Rogo a Deus para que continue lhe abençoando e lhe guiando pelos melhores caminhos durante toda a sua jornada. Desejo que você realize todos os seus sonhos e que seja sempre essa pessoa maravilhosa que é, esse pai que eu amo do fundo do coração. Te amo infinito.</p>
+        <button onclick="showPopup()">Clique aqui!</button>
+        <!-- CREATING A POPUP -->
+        <div id="popup" class="popup">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <img src="picture.jpg" alt="picture">
+        </div>
+        <script>
+            function showPopup() {
+                document.getElementById("popup").style.display = "flex";
+            }
+            function hidePopup() {
+                document.getElementById("popup").style.display = "none";
+            }
+        </script>
+
+        <!-- ADDING THE CONFETTI -->
+        <script>
+            document.addEventListener('mousemove', function (e) {
+              confetti({
+                particleCount: 2,
+                spread: 30,
+                origin: {
+                  x: e.clientX / window.innerWidth,
+                  y: e.clientY / window.innerHeight
+                },
+                colors: ['#ffff00', '#008b8b', '#ffffff']
+              });
+            });
+          </script>          
+    </div>
+</body>
+</html>
